@@ -1,0 +1,61 @@
+\documentclass[legalpaper,12pt,margin=1in]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{pstool, setspace}
+\usepackage{amsmath, cleveref, enumerate}
+\usepackage{apacite}
+\usepackage{pdfpages}
+\usepackage{mathtools}
+\usepackage{pdfpages}
+\usepackage{CJK}    %Ã¥Â¯ÅÃ¥ÂÂ¥CJKÃ¥Â®ÂÃ¥ÂÂ
+\usepackage{setspace}
+\doublespacing
+\newcommand\givenbase[1][]{\:#1\lvert\:}
+\let\given\givenbase
+\newcommand\sgiven{\givenbase[\delimsize]}
+\DeclarePairedDelimiterX\Basics[1](){\let\given\sgiven #1}
+\newcommand\Average{E\Basics}
+
+\title{Does gender norm play a role within households? Evidence from unemployment insurance crowd-out effect on spousal labor supply (Research Proposal Draft)}
+\author{Fangzhu Zhou}
+\setlength{\parskip}{10pt}
+\begin{document}
+
+\maketitle
+\section{Brief Literature Review and Research Question}
+My research idea is basically insprired from the following literature. As a beginning point, Liu and Vikat (2007) found in their paper that a higher combined income earned from spouses improve the couples's quality of life and enhance marriage stability. Furthermore, in Bertrand, Kamenica and Pan (2016), they argue that gender identity norms\footnote{They define "gender identity norm" as "husband is supposed to provide financial support for the family so they need to earn more than their wife".} play an important role in marriage by showing that if the wife's potential income is likely to exceed the husband's, the wife is less likely to be in the labor force and earns less than her potential if she does work. And in Cullen and Gruber (2000), they investigated the question within the context of wives' labor supply responses to their husbands' unemployment spells and they found strong "crowdout" of this form of family self-insurance where for each dollar of UI receipt wives earn up to 73 cents less. Combining the above literature, spousal labor supply might response differently for those family where wife is UI recipient comparing to those family where the husband is the recipient. Based on Liu and Vikat (2007), for both of the groups, the spouse tends to work more to compensate the loss of total households income if their partner is under unemployment spell. However, we expect to observe different spousal labor supply response depending the UI recipient is the wife or the husband. For those family where the husband is the recipient of UI, there are two underlying mechanisms going on. On the one hand, the increasing total households income financed from husband's unemployment insurance will have subsitution effect on the wife's labor supply. On the other hand, based on the study of Bertrand, Kamenica and Pan (2016), the traditonal gender identity norm is violated since the wife earns more than the husband, leading to a larger scale of substitution to leisure for the wife if the financial condition is less severe due to the existence of unemployment insurance. As a consequence, it is hard to determine whether this "crowdout" effect found by Cullen and Gruber (2000) on wife's labor supply is purely from the pecuniary effect brought by Unemployment Insurance or from the non-pecuniary effect due to the mitigated violation of tranditional gender identity norm. In this paper, I would like to ask the following questions:
+\begin{itemize}
+\item How does spousal labor supply response differently to their partner' unemployment spell?
+\item What part of the "crowdout" effect on wifes' labor supply is from the pecuniary effect brought by UI and what part of it is from the mitigated violation of traditional gender identity norm?
+\end{itemize}
+\section{Data}
+The data I would like to use is 2008-2013\footnote{Actually the date of first interview is September in 2008 and the last interview took place on December 2012.} panels of the Survey of Income and Program Participation (SIPP). SIPP is a longitudinal survey that collects information on demographic and economic characteristics of each household member, such as income, participation in government transfer programs, employment and health insurance coverage. The households information is collected from a large sample of households every 4 months. At each interview, households are asked questions about each month in the previous 4-month period. The number of Wave 1 eligible households is 52,031.\\
+Some strengths concerning this data souce is as following:
+\begin{itemize}
+  \item The sample size for 2008-2013 panel in SIPP is very large, which allows us to do some modification and restriction on our sample. For example, we can restrict our study on married couples in which both the husband and the wife are between 25-54 years old at the beginning of 2008. Therefore, we can eliminate the possible effect brought by unobserved characteristics of students who are intended for job lost and early retirees. Furthermore, we can also exclude those couples where at least one of them is self-employed because self-employment is not considered as eligible for unemployment insurance. Though due to the time constraint, at current premelitary state, I am not able to provide concrete number of the restricted sample size, I am not worried about the small sample issue.
+  \item Another strength is that we can almost get all the variables of interest from SIPP. For example, since each household member was interviewed per 4 months and answered questions regarding each past month, we can identify whether he or she is eligible for UI benefits. Since the information on past earnings is necessary to determine potential UI benefits assignment,  we can restrict our sample to months after we observe at leat 3 months of employment by the husband or the wife. And another requirement for UI benefits is that the individual has to seek for jobs. Therefore, we can further restrict our analysis to the samples in which the wife or the husband is looking for work in at least some months in order to exclude the possibility of volunteering labor force leaving.
+\end{itemize}
+Some issues also arise when we use this data souce. The 2008-2013 panel of SIPP is not the mostly updated panel while 2014-2017 Panel is also publicly released recently. The reason why I did not use 2014-2017 Panel is because they changed the interview frequency from 3 times per year to annually. Therefore, the credibility of their answer to the past monthly activity question is reduced because people's memory cannot operate that perfectly. Furthermore, though SIPP also offers 2004-2007 Panel, I did not consider to combine it to 2008-2013 panel. This is becuase of the fact that in early 2006, the 2004 Panel was almost cancelled due to Census budget shortfalls. As a result, the sample was cut by half from October 2006 to January 2008, leading to some potential data use issue.
+
+\section{Methodology}
+We would like to run seperate regression for the labor supply of wife and the labor supply of the husband. The regression is in the following form:
+\begin{equation}
+  LS^{wf}_{it} = \alpha_0 + \beta^{hus} UI^{hus}_{it} + X_{it} \Omega + \delta_j + \gamma_s + \epsilon_{it}
+\end{equation}
+And
+\begin{equation}
+  LS^{hus}_{it} = \alpha_1 + \beta^{wf} UI^{wf}_{it} + X_{it} \Omega + \delta_j + \gamma_s + \epsilon_{it}
+\end{equation}
+where $LS_{it}$ represents for the wife or the husband's labor supply of couple i during spell t. $UI_{it}$ represents for the unemployment insurance benefits received by the spouse during spell t. $X_{it}$ controls for demographic and economic variables. Furthermore, $\delta_j$ is the year-fixed effect and $\gamma_s$ is the state-fixed effect. Similar as what proposed in Gullen and Gruber (2000) model, our unit of observation is a spell of the spouse's unemployment (t) for couple i. What should be noted is that if the husband or the wife was under unemployment for some consecutive months, all consecutive months is only one observation. Therefore, $LS^{wf}_{it}$ or $LS^{hus}_{it}$ is the average labor supply among their partner's the whole unemployment spell. Lastly, our coefficients of interest are $\beta^{hus}$ and $\beta^{wf}$. \\
+It is worthy to note that (1) and (2) use different sample. To estimate $\beta^{hus}$, we restrict our sample to the couples where the husband is the UI recipient and the wife is not. On the other hand, when estimate $\beta^{wf}$, we use the sample where the wife is the UI recipient and the wife is not. Therefore, we do not have a problem of silmulanous equation issue in this case.\\
+As far as identification's concerned, I only have some general idea regarding some potential identification strategy at current stage. The best identification strategy I can think about is that we can find seperate IV for husband and wife which only shifts their labor supply through effecting unemployment insurance benefits (income) only. One potential method is to construct similar Bartik Instrument as Bertrand, Kamenica and Pan (2016) used:
+\begin{equation}
+  \bar{w}^{g}_{it} = \sum_j \gamma^g_{rejs,2014} \times w^g_{reajt,-s}
+\end{equation}
+where g represents for gender, r for race, e for education group, a for age group, j for industry, t for spell, and s for state. $w^g_{reajt,-s}$ is the average wage in year t in industry j for workers of a given gender\footnote{Since we only restrict the couples to "traditional couples" where the wife is female and the husband is male, we can identify wife or husband by gender. }, race, education, and age group in the nation, excluding state s. Besides, Variable $\gamma^g_{rejs,2014}$ is the fraction of individuals with gender g, race r, and education e in state s who are working in industry j, as of the base year 2014. Therefore, by construction, $\bar{w}^{g}_{it}$ is strongly correlated with the actual mean income for gender g in spell t, which capture the potential differentiated effect caused by industry shock on wife or husband's labor supply. Furthermore, variation in $\bar{w}^{g}_{it}$ in different time spell is driven by aggregate shock is plausibly orthogonal to other factors that might directly affect labor supply.\\
+As we stated in last part, our coefficients of interest are $\beta^{hus}$ and $\beta^{wf}$. If our hypothesis concerning the important role of gender norm playing within households is true, then we expect to see the scale of $\beta^{hus}$ should be significantly larger than $\beta^{wf}$. Furthermore, we can identify the differece of $\beta^{hus}$ and $\beta^{wf}$ as the "gender norm effect".
+\section{Reference}
+\textbf{Bertrand, M., Kamenica, E., Pan, J. (2016)}.  Gender Identity and Relative Income within Households , The Quarterly Journal of Economics, 130(2), 571-614  \\
+\textbf{Cullen, J., & Gruber, J. (2000)}. Does Unemployment Insurance Crowd out Spousal Labor Supply? Journal of Labor Economics,18(3), 546-572. doi:10.1086/209969 \\
+\textbf{Liu, Guiping, & Vikat, Andres. (2007)}.  Does Divorce Risk in Sweden depend on Spouses' Relative Income? A Study of Marriages from 1981 to 1998. Canadian Studies in Population, 34, 2, 217-240. \\
+
+\end{document}
